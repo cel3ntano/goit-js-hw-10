@@ -12,6 +12,7 @@
   letter-spacing: 0.04em;
   outline: none;
   margin-right: 8px;
+  transition: border 120ms ease;
 }
 
 #datetime-picker:hover {
@@ -31,7 +32,7 @@
   border: 1px solid #808080;
 }
 
-button {
+button[data-start] {
   height: 40px;
   /* margin-bottom: 32px; */
   padding: 8px 16px;
@@ -43,15 +44,20 @@ button {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  transition: background 120ms ease;
 }
 
-button:hover {
+button[data-start]:not(:disabled) {
+  animation: pulse 2s infinite;
+}
+
+button[data-start]:hover {
   background: #6c8cff;
 }
-button:active {
+button[data-start]:active {
   transform: translateY(3%);
 }
-button:disabled {
+button[data-start]:disabled {
   background: #cfcfcf;
   color: #989898;
 }
@@ -78,4 +84,30 @@ button:disabled {
   font-size: 16px;
   line-height: 1.5;
   text-transform: uppercase;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(44, 108, 204, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0.4);
+    box-shadow: 0 0 0 0 rgba(44, 108, 204, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(44, 108, 204, 0);
+    box-shadow: 0 0 0 10px rgba(44, 108, 204, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0);
+    box-shadow: 0 0 0 0 rgba(44, 108, 204, 0);
+  }
 }

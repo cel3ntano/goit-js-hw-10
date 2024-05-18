@@ -1,13 +1,27 @@
 .form {
   width: 360px;
 }
-button {
+.form button[type='submit'] {
+  border: none;
+  border-radius: 8px;
+  background: #4e75ff;
+  padding: 8px 16px;
   width: 360px;
   color: #fff;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  transition: background 120ms ease;
+  animation: pulse 2s infinite;
+}
+
+.form button[type='submit']:hover {
+  background: #6c8cff;
+}
+
+.form button[type='submit']:active {
+  transform: translateY(3%);
 }
 
 input[name='delay'] {
@@ -23,6 +37,7 @@ input[name='delay'] {
   letter-spacing: 0.04em;
   padding: 8px;
   outline: none;
+  transition: border 120ms ease;
 }
 
 input[name='delay']:hover {
@@ -34,6 +49,7 @@ input[name='delay']:active {
 }
 
 fieldset {
+  border: 1px solid #808080;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 24px;
@@ -42,9 +58,40 @@ fieldset {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  transition: border 120ms ease;
+}
+
+fieldset:hover {
+  border: 1px solid #000;
 }
 
 fieldset > legend {
   color: #2e2f42;
   letter-spacing: 0.04em;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(44, 108, 204, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0.4);
+    box-shadow: 0 0 0 0 rgba(44, 108, 204, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(44, 108, 204, 0);
+    box-shadow: 0 0 0 10px rgba(44, 108, 204, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(44, 108, 204, 0);
+    box-shadow: 0 0 0 0 rgba(44, 108, 204, 0);
+  }
 }
