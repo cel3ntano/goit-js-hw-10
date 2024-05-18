@@ -10,7 +10,7 @@
 @import url('./2-snackbar.css');
 
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, Montserrat, 'Segoe UI', Roboto,
+  font-family: Montserrat, 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -25,6 +25,7 @@
 
 body {
   background-color: rgba(255, 255, 255, 0.87);
+  /* background-color: rgba(97, 97, 97, 0.87); */
 }
 
 .navigation {
